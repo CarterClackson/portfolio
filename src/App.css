@@ -13,15 +13,23 @@
   }
 }
 
-.App-header {
+#root {
   background-color: #282c34;
+  background-image: url('./assets/images/portfolio-bg.png');
+  background-size: cover;
+  background-repeat: no-repeat;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
   color: white;
+}
+
+.visible {
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.hidden {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
 }
 
 .App-link {
@@ -35,4 +43,14 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.is-centered {
+  display: flex;
+  justify-content: center;
+}
+.subheader {
+  color: #689775;
+  font-size: 2.5em;
+  text-align: center;
 }

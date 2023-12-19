@@ -1,0 +1,9 @@
+nav {
+    position: fixed;
+    width: 100%;
+    background-color: white;
+    z-index: 1;
+}
+nav > ul {
+    margin-top: 0px;
+}
