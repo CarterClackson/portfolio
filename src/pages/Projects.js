@@ -1,12 +1,10 @@
 import React from 'react';
 
-import Hero from '../components/Hero';
 import ProjectGrid from '../components/ProjectGrid';
 
-const Home = () => {
+const Projects = () => {
     return (
         <React.Fragment>
-            <Hero />
             <ProjectGrid />
         </React.Fragment>
     );
@@ -14,4 +12,4 @@ const Home = () => {
 }
 
 
-export default Home;
+export default Projects;

@@ -8,7 +8,7 @@ const NavBar = () => {
 
     useEffect(() => {
         const handleScroll = () => {
-            setShowNavBar(window.scrollY > 100);
+            setShowNavBar(window.scrollY > 150);
         };
 
         window.addEventListener('scroll', handleScroll);
@@ -19,6 +19,18 @@ const NavBar = () => {
     }, []);
     return (
         <nav className={showNavBar ? 'visible' : 'hidden'}>
+            <ul>
+                <li>
+                    <a href="https://github.com/CarterClackson/" target="_blank" rel="noopener noreferrer">
+                        <i className="fab fa-github"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/in/carter-clackson-25a2a5159/" target="_blank" rel="noopener noreferrer">
+                        <i className="fab fa-linkedin"></i>
+                    </a>
+                </li>
+            </ul>
             <ul>
                 <li>
                     <Link to="/">Home</Link>

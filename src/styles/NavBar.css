@@ -1,9 +1,30 @@
 nav {
+    display: flex;
+    justify-content: space-between;
     position: fixed;
     width: 100%;
-    background-color: white;
+    background-color: black;
     z-index: 1;
+    -webkit-box-shadow: 5px 5px 15px 5px #000000; 
+    box-shadow: 5px 5px 15px 5px #000000;
 }
 nav > ul {
     margin-top: 0px;
+    margin-bottom: 0px;
+    padding: 20px;
+    display: flex;
+    justify-content: flex-end;
+    list-style-type: none;
+}
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    font-weight: 600;
+}
+nav a:hover {
+    color: #689775;
+}
+nav i {
+    font-size: 24px;
 }

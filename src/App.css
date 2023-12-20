@@ -1,3 +1,36 @@
+body {
+  font-family: 'Albert Sans', sans-serif;
+}
+a {
+  color: white;
+  transition: all 0.3s;
+}
+a:hover {
+  color: #689775;
+}
+h1 {
+  font-size: 4.5em;
+  color: #c7493a;
+  margin: -10px 0px 10px 0px;
+}
+h2, h3, h4, h5, h6 {
+  color: #a33327;
+}
+.button {
+  color: white;
+  background-color: #689775;
+  border-radius: 5px;
+  margin-top: 10px;
+  padding: 10px;
+  font-weight: 600;
+  text-decoration: none;
+  width: 120px;
+  transition: all 0.3s;
+}
+.button:hover {
+  color: #689775;
+  background-color: white;
+}
 .App {
   text-align: center;
 }
@@ -15,9 +48,10 @@
 
 #root {
   background-color: #282c34;
-  background-image: url('./assets/images/portfolio-bg.png');
+  background-image: url('./assets/images/stars-bg.png');
   background-size: cover;
   background-repeat: no-repeat;
+  background-attachment: fixed;
   min-height: 100vh;
   color: white;
 }
@@ -50,7 +84,8 @@
   justify-content: center;
 }
 .subheader {
-  color: #689775;
+  color: #a33327;
   font-size: 2.5em;
   text-align: center;
+  margin-bottom: 0;
 }
