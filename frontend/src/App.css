@@ -26,6 +26,7 @@ h2, h3, h4, h5, h6 {
   text-decoration: none;
   width: 120px;
   transition: all 0.3s;
+  text-align: center;
 }
 .button:hover {
   color: #689775;

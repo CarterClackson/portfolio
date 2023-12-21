@@ -1,0 +1,9 @@
+#home-contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#home-contact span {
+    margin-bottom: 2em;
+}
