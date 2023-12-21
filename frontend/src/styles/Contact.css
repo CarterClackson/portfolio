@@ -1,9 +1,28 @@
+/* Homepage contact section */ 
 #home-contact {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding-bottom: 8em;
 }
 #home-contact span {
     margin-bottom: 2em;
+}
+
+/* Contact Page */
+#contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 8em;
+}
+#contact > div {
+    padding-top: 4em;
+    width: 100%;
+    max-width: 500px;
+}
+label span {
+    margin-bottom: 5px;
 }

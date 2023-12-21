@@ -9,7 +9,7 @@ a:hover {
   color: #689775;
 }
 h1 {
-  font-size: 4.5em;
+  font-size: 3em;
   color: #c7493a;
   margin: -10px 0px 10px 0px;
 }
@@ -22,6 +22,7 @@ h2, h3, h4, h5, h6 {
   border-radius: 5px;
   margin-top: 10px;
   padding: 10px;
+  font-size: 16px;
   font-weight: 600;
   text-decoration: none;
   width: 120px;
@@ -32,6 +33,25 @@ h2, h3, h4, h5, h6 {
   color: #689775;
   background-color: white;
 }
+button {
+  color: white;
+  background-color: #689775;
+  border-radius: 5px;
+  margin-top: 10px;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  width: 120px;
+  transition: all 0.3s;
+  text-align: center;
+}
+
+button:hover {
+  color: #689775;
+  background-color: white;
+}
+
 .App {
   text-align: center;
 }
@@ -65,6 +85,9 @@ h2, h3, h4, h5, h6 {
 .hidden {
   opacity: 0;
   transition: opacity 0.5s ease-in-out;
+}
+.hidden a {
+  pointer-events: none;
 }
 
 .App-link {

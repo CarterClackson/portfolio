@@ -1,0 +1,38 @@
+/* ContactForm.css */
+form {
+    margin: 0 auto;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 8px;
+  }
+  
+  input,
+  textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+  }
+  
+  button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+  }
+  .bg-white-fix {
+    width: fit-content;
+    background-color: white;
+    border-radius: 5px;
+  }
+  .field-error {
+    background-color: rgba(204, 0, 0, 0.9);
+    color: white;
+    border-radius: 5px;
+    padding: 5px 15px;
+    font-size: 12px;
+    width: fit-content;
+    margin-bottom: 18px;
+  }

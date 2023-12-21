@@ -5,6 +5,11 @@ main.hero {
     padding-bottom: 20em;
     padding-top: 5em;
 }
+.hero h1 {
+    font-size: 4.5em;
+    color: #c7493a;
+    margin: -10px 0px 10px 0px;
+  }
 main.hero div:first-child {
     display: flex;
     justify-content: center;

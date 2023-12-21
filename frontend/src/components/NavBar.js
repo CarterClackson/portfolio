@@ -1,22 +1,29 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 import '../styles/NavBar.css';
 
 const NavBar = () => {
     const [showNavBar, setShowNavBar] = useState(false);
+    const location = useLocation();
 
     useEffect(() => {
         const handleScroll = () => {
-            setShowNavBar(window.scrollY > 150);
+            if (location.pathname === '/'){
+                setShowNavBar(window.scrollY > 150);
+            } else {
+                setShowNavBar(true);
+            }
         };
+
+        handleScroll();
 
         window.addEventListener('scroll', handleScroll);
 
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };
-    }, []);
+    }, [location.pathname]);
     return (
         <nav className={showNavBar ? 'visible' : 'hidden'}>
             <ul>
