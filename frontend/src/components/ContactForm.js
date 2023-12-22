@@ -49,7 +49,7 @@ const ContactForm = () => {
         }
 
             try {
-                const response = await fetch('http://localhost:3001/send-email', {
+                const response = await fetch(process.env.REACT_APP_BACKEND_URL + '/send-email', {
                   method: 'POST',
                   headers: {
                     'Content-Type': 'application/json',

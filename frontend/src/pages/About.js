@@ -10,7 +10,7 @@ const About = () => {
             <section id="about">
                 <h1>About</h1>
                 <div className="flex-half">
-                    <img src="/assets/images/carter-clackson.png" />
+                    <img src="/assets/images/carter-clackson.png" alt="Portrait of Carter Clackson"/>
                     <div>
                         <p>I'm Carter Clackson, a passionate fullstack developer from the city of Winnipeg, Manitoba, Canada. With a wealth of experience in crafting seamless web solutions, I currently serve as a Senior UX Developer at Manitoba Public Insurance.</p>
 
