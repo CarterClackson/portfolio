@@ -14,7 +14,7 @@ deploy_dir=$(mktemp -d)
 cp -r server/* $deploy_dir
 
 # Create a zip file for deployment
-zip -r release.zip -j $deploy_dir
+zip -r release.zip -j $deploy_dir --exclude "frontend/"
 
 # Clean up the temporary deployment directory
 rm -rf $deploy_dir
