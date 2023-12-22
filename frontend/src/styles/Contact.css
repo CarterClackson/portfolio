@@ -39,3 +39,9 @@ label span {
         text-align: center;
     }
 }
+
+@media screen and (max-width: 375px) {
+    #home-contact span {
+        width: 90%;
+    }
+}
