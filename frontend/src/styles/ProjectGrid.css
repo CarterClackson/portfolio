@@ -77,3 +77,16 @@
   #more-projects .button {
     text-align: center;
   }
+
+  @media screen and (max-width: 768px) {
+    .project-grid {
+      width: 90%;
+    }
+    #projects {
+      width: 90%;
+      margin: 0 auto;
+    }
+    #projects > span {
+      text-align: center;;
+    }
+  }

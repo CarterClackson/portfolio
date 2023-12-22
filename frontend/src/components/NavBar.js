@@ -5,6 +5,7 @@ import '../styles/NavBar.css';
 
 const NavBar = () => {
     const [showNavBar, setShowNavBar] = useState(false);
+    const [showMobileMenu, setShowMobileMenu] = useState(false);
     const location = useLocation();
 
     useEffect(() => {
@@ -24,8 +25,24 @@ const NavBar = () => {
             window.removeEventListener('scroll', handleScroll);
         };
     }, [location.pathname]);
+
+    const toggleMobileMenu = () => {
+        setShowMobileMenu(!showMobileMenu);
+    };
+
+    const closeMobileMenu = () => {
+        setShowMobileMenu(false);
+    };
     return (
-        <nav className={showNavBar ? 'visible' : 'hidden'}>
+        <React.Fragment>
+        <button className="mobile-menu-button" onClick={toggleMobileMenu}>
+                {showMobileMenu ? (
+                    <i className="fas fa-times"></i> // Close (X) icon
+                ) : (
+                    <i className="fas fa-bars"></i> // Hamburger icon
+                )}
+            </button>
+        <nav className={`desktop-nav ${showNavBar ? 'visible' : 'hidden'}`}>
             <ul>
                 <li>
                     <a href="https://github.com/CarterClackson/" target="_blank" rel="noopener noreferrer">
@@ -53,6 +70,35 @@ const NavBar = () => {
                 </li>
             </ul>
         </nav>
+        <nav className={`mobile-menu ${showMobileMenu ? 'mobile-menu-show' : 'mobile-menu-hide'}`}>
+            <ul>
+                <li>
+                    <a href="https://github.com/CarterClackson/" target="_blank" rel="noopener noreferrer">
+                        <i className="fab fa-github"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/in/carter-clackson-25a2a5159/" target="_blank" rel="noopener noreferrer">
+                        <i className="fab fa-linkedin"></i>
+                    </a>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <Link to="/" onClick={closeMobileMenu}>Home</Link>
+                </li>
+                <li>
+                    <Link to="/about" onClick={closeMobileMenu}>About</Link>
+                </li>
+                <li>
+                    <Link to="/projects" onClick={closeMobileMenu}>Projects</Link>
+                </li>
+                <li>
+                    <Link to="/contact" onClick={closeMobileMenu}>Contact</Link>
+                </li>
+            </ul>
+        </nav>
+        </React.Fragment>
     );
 };
 

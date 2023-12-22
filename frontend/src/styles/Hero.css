@@ -46,3 +46,26 @@ main.hero div:first-child {
 .scroll-down-arrow i {
     font-size: 35px;
 }
+@media screen and (max-width: 768px) {
+    main.hero {
+        padding-bottom: 10em;
+    }
+    main.hero div:first-child {
+        width: 90%;
+        margin: 0 auto;
+        text-align: center;
+        font-size: 0.4em;
+    }
+    main.hero div:first-child span:last-child {
+        font-size: 2em;
+    }
+    .socials {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    main.hero div:first-child span:last-child {
+        font-size: 2.5em;
+    }
+}

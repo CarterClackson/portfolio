@@ -26,3 +26,16 @@
 label span {
     margin-bottom: 5px;
 }
+
+@media screen and (max-width: 768px) {
+    #home-contact span {
+        text-align: center;
+    }
+    #contact {
+        width: 90%;
+        margin: 0 auto;
+    }
+    #contact > span {
+        text-align: center;
+    }
+}
