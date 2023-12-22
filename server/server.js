@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const sgMail = require('@sendgrid/mail');
 const dotenv = require('dotenv');
 const cors = require('cors');
+const http = require('http');
 
 dotenv.config(); // Load environment variables from .env file
 
@@ -36,6 +37,18 @@ app.post('/send-email', (req, res) => {
       res.status(500).json({ success: false, message: 'There was a problem submitting this form. Feel free to send your inquiry to <a href="mailto:hello@carterclackson.ca">hello@carterclackson.ca</a> or try submitting the form again later.' });
     });
 });
+
+app.get('/heartbeat', (req, res) => {
+  res.send('Heartbeat received');
+});
+
+(setInterval(() => {
+  http.get(`${process.env.URL}/heartbeat`, (response) => {
+    console.log('Heartbeat success');
+  }).on('error', (err) => {
+    console.error(`Error sending heartbeat: ${err.message}`);
+  });
+}, 600000)); // Every 10 mins send a heartbeat 
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
