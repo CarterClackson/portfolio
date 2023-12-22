@@ -11,6 +11,8 @@ server/node_modules
 
 # production
 */build
+*/.deployment
+.vscode/*
 
 # misc
 .DS_Store
