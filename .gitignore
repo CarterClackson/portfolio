@@ -5,6 +5,8 @@ frontend/node_modules
 server/node_modules
 /.pnp
 .pnp.js
+aws/*
+aws/
 
 # testing
 /coverage
@@ -13,7 +15,6 @@ server/node_modules
 */build
 */.deployment
 .vscode/*
-aws/
 
 # misc
 .DS_Store

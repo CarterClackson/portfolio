@@ -2,20 +2,34 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const sgMail = require('@sendgrid/mail');
 const dotenv = require('dotenv');
+const awsServerlessExpress = require('aws-serverless-express');
 const cors = require('cors');
-const http = require('http');
 
 dotenv.config(); // Load environment variables from .env file
 
 const app = express();
-const port = process.env.PORT || 3001;
 
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 app.use(cors());
 app.use(bodyParser.json());
 
+// Middleware to handle OPTIONS requests and set CORS headers
+app.use((req, res, next) => {
+  if (req.method === 'OPTIONS' && req.url === '/send-email') {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Methods', 'OPTIONS, POST');
+    res.header('Access-Control-Allow-Headers', 'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token');
+    res.send();
+  } else {
+    next();
+  }
+});
+
+
+// POST route for sending emails
 app.post('/send-email', (req, res) => {
+  
   const { reply_to, subject, text, html } = req.body;
 
   const msg = {
@@ -38,18 +52,13 @@ app.post('/send-email', (req, res) => {
     });
 });
 
-app.get('/heartbeat', (req, res) => {
-  res.send('Heartbeat received');
+// Generic route to handle all POST requests
+app.post('/*', (req, res) => {
+  res.status(200).json({ success: false, message: 'Invalid POST request' });
 });
 
-(setInterval(() => {
-  http.get(`${process.env.URL}/heartbeat`, (response) => {
-    console.log('Heartbeat success');
-  }).on('error', (err) => {
-    console.error(`Error sending heartbeat: ${err.message}`);
-  });
-}, 600000)); // Every 10 mins send a heartbeat 
+const serverProxy = awsServerlessExpress.createServer(app);
 
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
-});
+exports.handler = (event, context) => {
+  awsServerlessExpress.proxy(serverProxy, event, context);
+};
