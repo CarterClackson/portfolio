@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import '../styles/ContactForm.css';
 
+import LoadingSpinner from './UIElements/LoadingSpinner';
+
 const ContactForm = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -11,6 +13,14 @@ const ContactForm = () => {
   const [formErrors, setFormErrors] = useState({});
   const [generalError, setGeneralError] = useState('');
   const [formSuccess, setFormSuccess] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+
+  const forbiddenKeywords = (text) => {
+    const forbiddenTerms = ['viagra', 'online casino', 'get rich quick'];
+    const lowercasedText = text.toLowerCase();
+  
+    return forbiddenTerms.some(term => lowercasedText.includes(term));
+  };
 
   const handleChange = (e) => {
     setFormData({
@@ -28,6 +38,7 @@ const ContactForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsLoading(true);
 
     // Validate form fields
     const errors = {};
@@ -43,7 +54,16 @@ const ContactForm = () => {
     if (Object.keys(errors).length > 0) {
       // Set formErrors state to display errors beneath each field
       setFormErrors(errors);
+      setIsLoading(false);
       return;
+    }
+
+    const isSpam = forbiddenKeywords(formData.message);
+
+    if (isSpam) {
+        setGeneralError('Your message appears to contain spammy content. Please update your message and try submitting again.');
+        setIsLoading(false);
+        return;
     }
 
     try {
@@ -97,17 +117,20 @@ const ContactForm = () => {
 
       if (response.ok) {
         const result = await response.json();
+        setIsLoading(false);
         console.log(result);
         setFormData({ name: '', email: '', message: '' });
         setGeneralError('');
         setFormSuccess('Thank you for your message. I will get back to you as soon as I can.');
       } else {
         console.error('Error:', response.statusText);
+        setIsLoading(false);
         const errorMessage = await response.text();
         setGeneralError(errorMessage);
       }
     } catch (err) {
       console.log('Error:', err);
+      setIsLoading(false);
       setGeneralError('An unexpected error has occurred. Please try again later.');
     }
   };
@@ -116,8 +139,10 @@ const ContactForm = () => {
     <div>
       {formSuccess && <div className="success"><h4 style={{ textAlign: 'center' }}>{formSuccess}</h4></div>}
       {generalError && <div className="error">{generalError}</div>}
+      {isLoading && <LoadingSpinner asOverlay />}
       {!formSuccess && (
         <form onSubmit={handleSubmit}>
+            <input type="text" name="spamValidation" style={{ display: 'none' }} />
           <label>
             <span>Name:</span>
             <input type="text" name="name" value={formData.name} onChange={handleChange} />

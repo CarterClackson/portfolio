@@ -36,6 +36,15 @@ form {
     width: fit-content;
     margin-bottom: 18px;
   }
+  .error {
+    background-color: rgba(204, 0, 0, 0.9);
+    color: white;
+    border-radius: 5px;
+    padding: 5px 15px;
+    font-size: 14px;
+    width: fit-content;
+    margin-bottom: 18px;
+  }
 
   @media screen and (max-width: 768px) {
     input, textarea {

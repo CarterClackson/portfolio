@@ -7,8 +7,8 @@ It can be viewed at [carterclackson.ca](https://carterclackson.ca)
 ## Technologies used
 
 This project utilizes the following technology:
-- React(Frontend)
-- NodeJS(Backend)
+- React(Frontend) - Hosted at Netlify
+- NodeJS(Backend) - AWS
 - AWS Lambda(Serverless function for mail sending)
 - SendGrid(email)
 
