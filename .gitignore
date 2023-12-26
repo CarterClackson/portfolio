@@ -13,6 +13,7 @@ server/node_modules
 */build
 */.deployment
 .vscode/*
+aws/
 
 # misc
 .DS_Store
