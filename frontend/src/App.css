@@ -6,7 +6,7 @@ a {
   transition: all 0.3s;
 }
 a:hover {
-  color: #689775;
+  color: #EBC849;
 }
 h1 {
   font-size: 3em;
@@ -14,11 +14,11 @@ h1 {
   margin: -10px 0px 10px 0px;
 }
 h2, h3, h4, h5, h6 {
-  color: #a33327;
+  color: #D14636;
 }
 .button {
-  color: white;
-  background-color: #689775;
+  color: black;
+  background-color: #8896AB;
   border-radius: 5px;
   margin-top: 10px;
   padding: 10px;
@@ -30,12 +30,12 @@ h2, h3, h4, h5, h6 {
   text-align: center;
 }
 .button:hover {
-  color: #689775;
+  color: #8896AB;
   background-color: white;
 }
 button {
-  color: white;
-  background-color: #689775;
+  color: black;
+  background-color: #8896AB;
   border-radius: 5px;
   margin-top: 10px;
   padding: 10px;
@@ -48,7 +48,7 @@ button {
 }
 
 button:hover {
-  color: #689775;
+  color: #8896AB;
   background-color: white;
 }
 
@@ -108,7 +108,7 @@ button:hover {
   justify-content: center;
 }
 .subheader {
-  color: #a33327;
+  color: #D14636;
   font-size: 2.5em;
   text-align: center;
   margin-bottom: 0;

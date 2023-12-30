@@ -7,7 +7,7 @@ main.hero {
 }
 .hero h1 {
     font-size: 4.5em;
-    color: #c7493a;
+    color: #D14636;
     margin: -10px 0px 10px 0px;
   }
 main.hero div:first-child {
@@ -25,7 +25,7 @@ main.hero div:first-child {
     transition: all 0.2s;
 }
 .socials a:hover {
-    color: #689775;
+    color: #EBC849;
 }
 .socials i {
     font-size: 24px;

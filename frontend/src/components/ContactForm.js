@@ -76,7 +76,7 @@ const ContactForm = () => {
           httpMethod: 'POST',
           body: JSON.stringify({
             reply_to: formData.email,
-            subject: 'Portfolio Contact Form Submission',
+            subject: `Portfolio Form Submission - ${formData.name}`,
             text: `Name: ${formData.name}\n Email: ${formData.email}\n Message: ${formData.message}`,
             html: `<p>Name: ${formData.name}</p><p>Email: ${formData.email}</p><p>Message: ${formData.message}</p>`,
           }),
@@ -116,9 +116,7 @@ const ContactForm = () => {
       });
 
       if (response.ok) {
-        const result = await response.json();
         setIsLoading(false);
-        console.log(result);
         setFormData({ name: '', email: '', message: '' });
         setGeneralError('');
         setFormSuccess('Thank you for your message. I will get back to you as soon as I can.');
