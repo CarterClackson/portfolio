@@ -21,10 +21,10 @@ const ProjectGrid = () => {
       techUsed: ['mongodb', 'javascript', 'react', 'nodejs']
     },
     {
-      title: 'organized',
-      description: 'This project is my version of a task and project management application. Taking all of my favourite features from each of the popular applications on the market and putting them together in one place. The source code for this project is available on Github, accessible through the link below.',
-      link: 'https://github.com/CarterClackson/wsal-data-collector',
-      imageSrc: 'https://www.proedsolutions.com/wp-content/themes/micron/images/placeholders/placeholder_large_dark.jpg',
+      title: 'equityEyes',
+      description: 'This project is a dynamic stock management application that allows users to search, save, and analyze stocks within their own personalized accounts. This platform offers daily updates, personalized data analysis, and a user-friendly interface for informed investment decisions. The source code for this project is available on Github, accessible through the link below.',
+      link: 'https://github.com/CarterClackson/equityEyes',
+      imageSrc: 'assets/images/equityEyes-portfolio.png',
       techUsed: ['mongodb', 'javascript', 'react', 'nodejs']
     },
     // Add more projects as needed
